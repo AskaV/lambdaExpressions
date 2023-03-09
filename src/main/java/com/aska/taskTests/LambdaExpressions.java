@@ -1,54 +1,31 @@
 package com.aska.taskTests;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
 
 public class LambdaExpressions {
 
-    public static Object filterByFirstAndLastCharacter(char letter, List<String> wordList) {
-
-        return null;
+    public static Object filterByFirstAndLastCharacter(String letter, List<String> wordList) {
+        return  wordList.stream().filter(str -> str.length() > 1 & str.startsWith(letter) & str.endsWith(letter)).collect(Collectors.toList());
     }
 
     public static Object sortByIntegerValuesOfStringsList(List<String> wordList) {
-
-        return null;
+        return wordList.stream().map(str->str.length()).sorted().collect(Collectors.toList());
     }
 
     public static Object splitFirstAndLastLetterOfWord(List<String> wordList) {
-
-        return null;
+        return wordList.stream().map(str-> String.valueOf(str.charAt(0)) + String.valueOf(str.charAt(str.length()-1))).collect(Collectors.toList());
     }
 
     public static Object testAscendingSortedListOfFixedLenghtThatEndDigit(int number, List<String> wordList) {
-
-        return null;
+        return wordList.stream().filter(str -> str.length() == 2 & Character.isDigit(str.charAt(str.length()-1))).sorted().collect(Collectors.toList());
     }
 
     public static Object testOddIntSortedList(List<Integer> wordList) {
-
-        return null;
+        return wordList.stream().filter(str -> str % 2 != 0).sorted().collect(Collectors.toList());
     }
 }
 
-//Write functional programming lambda expressions using Java 8 streams. Each task must be solved with one lambda expressions. Put lambda expressions in the return statement1.
-//At the Low level, you need to solve the following five tasks:
-//Task 1.
-//The character C and a sequence of non-empty strings stringList are given. Get a new sequence of strings with more than one character from the stringList, starting and ending with C. For example:
-//input: Symbol = 'a', {"Hello", "qwerty", "asda", "asdfa", "as", "a"}
-//output: {"asda", "asdfa"}
-//Task 2.
-//A sequence of non-empty strings stringList is given. Get a sequence of ascending sorted integer values equal to the lengths of the strings included in the stringList sequence. For example:
-//input: {"Hello", "world", "!", "Good", "morning", "!"}
-//output: {1, 1, 4, 5, 5, 7}
-//Task 3.
-//A sequence of non-empty strings stringList is given. Get a new sequence of strings, where each string consists of the first and last characters of the corresponding string in the stringList sequence. For example:
-//input: {"asd", "a", "basdw"}
-//output: {"ad", "aa", "bw"}
-//Task 4.
-//A positive integer K and a sequence of non-empty strings stringList are given. Strings of the sequence contain only numbers and capital letters of the Latin alphabet. Get from stringList all strings of length K ending in a digit and sort them in ascending order. For example:
-//input: number = 2, {"8DC3", "4F", "B", "3S", "S3", "A1", "2A3G", "1B"}
-//output: {"A1", "S3"}
-//Task 5.
-//A sequence of positive integer values integerList is given. Get sequence of string representations of only odd integerList values and sort in ascending order. For example:
-//input: {1, 2, 3, 4, 5, 6}
-//output: {"1", "3", "5"}
+//var n = wordList.stream().map(str-> String.valueOf(str.charAt(0)) + String.valueOf(str.charAt(str.length()-1))).collect(Collectors.toList());
+//n.forEach(System.out::println);
