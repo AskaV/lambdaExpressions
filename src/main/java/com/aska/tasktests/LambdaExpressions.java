@@ -1,6 +1,7 @@
-package com.aska.taskTests;
+package com.aska.tasktests;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 
@@ -17,6 +18,12 @@ public class LambdaExpressions {
     public static Object splitFirstAndLastLetterOfWord(List<String> wordList) {
         return wordList.stream().map(str-> String.valueOf(str.charAt(0)) + String.valueOf(str.charAt(str.length()-1))).collect(Collectors.toList());
     }
+
+    //        return list
+    //                .stream()
+    //                .filter(Objects::nonNull)
+    //                .map(x -> x.charAt(0) + x.substring(x.length() - 1))
+    //                .collect(Collectors.toList());
 
     public static Object testAscendingSortedListOfFixedLenghtThatEndDigit(int number, List<String> wordList) {
         return wordList.stream().filter(str -> str.length() == 2 & Character.isDigit(str.charAt(str.length()-1))).sorted().collect(Collectors.toList());

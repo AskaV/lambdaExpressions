@@ -1,4 +1,4 @@
-package com.aska.taskTests;
+package com.aska.tasktests;
 
 import jdk.jfr.Description;
 import org.slf4j.Logger;
