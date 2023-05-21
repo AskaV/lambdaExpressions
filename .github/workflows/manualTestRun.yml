@@ -1,6 +1,5 @@
 name: manual test run
-run-name: ${{ github.actor }} is learning GitHub Actions
-
+run-name: ${{ github.actor }} is manual test run
 on:
   workflow_dispatch:
     inputs:
