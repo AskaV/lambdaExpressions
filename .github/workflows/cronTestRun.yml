@@ -1,5 +1,5 @@
 name: cron test run
-run-name: ${{ github.actor }} is learning GitHub Actions
+run-name: ${{ github.actor }} is cron test run
 on:
   schedule:
     - cron: '18,25 * * * *'
